@@ -68,7 +68,6 @@ export default function BlogCard({
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "primary.main" }} aria-label="user">
-            {username.charAt(0).toUpperCase()}
           </Avatar>
         }
         title={

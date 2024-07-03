@@ -84,7 +84,7 @@ const Login = () => {
             margin="normal"
             type={"password"}
             required
-            onChange={(e) => handleSubmit(e)}
+            onChange={(e) => handleChange(e)}
             fullWidth
             variant="outlined"
           />
