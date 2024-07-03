@@ -26,6 +26,6 @@ app.use(blogRoutes);
 
 const PORT = process.env.PORT || 3100
 //listen
-app.listen(3100, () => {
+app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`);
 });
