@@ -4,6 +4,8 @@ const { getAllUsers, registerController, loginController } = require('../control
 
 const router = express.Router()
 
+router.get('/test',()=>{return "testing"})
+
 router.get('/all-blog', getAllBlogsController)
 
 router.post('/create-blog', createBlogController)
