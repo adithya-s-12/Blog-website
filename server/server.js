@@ -10,8 +10,9 @@ const bodyParser = require("body-parser");
 //env config
 dotenv.config()
 
-const userRoutes = require('./routes/userRoutes')
-const blogRoutes = require('./routes/blogRoutes')
+// const userRoutes = require('./routes/userRoutes')
+// const blogRoutes = require('./routes/blogRoutes')
+const router = require('./routes/route')
 
 db.connect();
 
@@ -26,8 +27,8 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 //routes
-app.use("/",userRoutes);
-app.use("/",blogRoutes);
+app.use("/",router);
+
 
 const PORT = process.env.PORT || 3100
 //listen
