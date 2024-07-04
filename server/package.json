@@ -4,10 +4,7 @@
   "description": "blogging website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client":"npm start --prefix ./client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "nodemon server.js"
   },
   "author": "Adithya",
   "license": "ISC",
