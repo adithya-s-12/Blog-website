@@ -3,6 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
+import {URI} from "../data";
 
 const BlogDetails = () => {
   const [blog, setBlog] = useState({});
@@ -13,7 +14,7 @@ const BlogDetails = () => {
   // get blog details
   const getBlogDetail = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3100/get-blog/${id}`);
+      const { data } = await axios.get(`${URI}/get-blog/${id}`);
       if (data?.success) {
         setBlog(data?.blog);
         setInputs({
@@ -43,7 +44,7 @@ const BlogDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(`http://localhost:3100/update-blog/${id}`, {
+      const { data } = await axios.put(`${URI}/update-blog/${id}`, {
         title: inputs.title,
         description: inputs.description,
         image: inputs.image,

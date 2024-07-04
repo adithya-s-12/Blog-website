@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
 import toast from "react-hot-toast";
+import {URI} from "../data";
 
 const CreateBlog = () => {
   const id = localStorage.getItem("userId");
@@ -25,7 +26,7 @@ const CreateBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:3100/create-blog", {
+      const { data } = await axios.post(`${URI}/create-blog`, {
         title: inputs.title,
         description: inputs.description,
         image: inputs.image,

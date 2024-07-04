@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BlogCard from "../components/BlogCard";
 import { Box, Grid, Typography } from "@mui/material";
+import {URI} from "../data";
 
 const UserBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,7 +12,7 @@ const UserBlogs = () => {
   const getUserBlogs = async () => {
     try {
       const id = localStorage.getItem("userId");
-      const { data } = await axios.get(`http://localhost:3100/user-blog/${id}`);
+      const { data } = await axios.get(`${URI}/user-blog/${id}`);
       if (data?.success) {
         setBlogs(data?.userBlog.blogs);
         setUser(data?.userBlog);

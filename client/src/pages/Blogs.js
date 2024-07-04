@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BlogCard from "../components/BlogCard";
 import { Box, Grid, Typography } from "@mui/material";
+import {URI} from "../data";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   const getAllBlogs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3100/all-blog");
+      const { data } = await axios.get(`${URI}/all-blog`);
       if (data?.success) {
         console.log("we r here");
         setBlogs(data?.blogs);
