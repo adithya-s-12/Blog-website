@@ -4,6 +4,8 @@ const morgan = require('morgan')
 const colors = require('colors')
 const dotenv = require('dotenv')
 const db = require('./config/db')
+const bodyParser = require("body-parser");
+
 
 //env config
 dotenv.config()
@@ -20,9 +22,12 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+
 //routes
-app.use(userRoutes);
-app.use(blogRoutes);
+app.use("/",userRoutes);
+app.use("/",blogRoutes);
 
 const PORT = process.env.PORT || 3100
 //listen
